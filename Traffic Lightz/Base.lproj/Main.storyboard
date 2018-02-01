@@ -1,24 +1,98 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina5_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Avenir.ttc">
+            <string>Avenir-Heavy</string>
+        </array>
+        <array key="AvenirNext.ttc">
+            <string>AvenirNext-Heavy</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Traffic_Lightz" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="desert-2340326_1920" translatesAutoresizingMaskIntoConstraints="NO" id="Z3q-rL-Sg7">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="trafficLight" translatesAutoresizingMaskIntoConstraints="NO" id="Ilw-Gl-7k3">
+                                <rect key="frame" x="16" y="38" width="382" height="170"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="170" id="5IS-oK-TzA"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8q8-Zp-XyF">
+                                <rect key="frame" x="77" y="528.33333333333337" width="259" height="176.66666666666663"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="8q8-Zp-XyF" secondAttribute="height" multiplier="22:15" id="MqD-Br-JBn"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="40"/>
+                                <size key="titleShadowOffset" width="0.0" height="2"/>
+                                <state key="normal" title="Start" backgroundImage="stopButton">
+                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="startGame:" destination="BYZ-38-t0r" eventType="touchUpInside" id="f4l-QV-aWh"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="070-OL-8Hw">
+                                <rect key="frame" x="16" y="213" width="382" height="276.33333333333326"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Heavy" family="Avenir Next" pointSize="100"/>
+                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="0.44860338184931509" colorSpace="custom" customColorSpace="sRGB"/>
+                                <size key="shadowOffset" width="3" height="3"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Z3q-rL-Sg7" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="3hd-Bc-Y3L"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="8q8-Zp-XyF" secondAttribute="trailing" constant="78" id="8HC-SZ-tSS"/>
+                            <constraint firstItem="8q8-Zp-XyF" firstAttribute="top" secondItem="070-OL-8Hw" secondAttribute="bottom" constant="39" id="JcV-ht-Ctl"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="070-OL-8Hw" secondAttribute="trailing" constant="16" id="Rkw-Gz-XK6"/>
+                            <constraint firstAttribute="trailing" secondItem="Z3q-rL-Sg7" secondAttribute="trailing" id="VlY-y6-fAV"/>
+                            <constraint firstItem="070-OL-8Hw" firstAttribute="top" secondItem="Ilw-Gl-7k3" secondAttribute="bottom" constant="5" id="WmQ-gM-55T"/>
+                            <constraint firstItem="070-OL-8Hw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="YDp-mo-J7H"/>
+                            <constraint firstItem="Z3q-rL-Sg7" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="d2U-h8-j1s"/>
+                            <constraint firstItem="8q8-Zp-XyF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="77" id="eBS-tF-e5m"/>
+                            <constraint firstAttribute="bottom" secondItem="Z3q-rL-Sg7" secondAttribute="bottom" id="iuy-5c-h3A"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="8q8-Zp-XyF" secondAttribute="bottom" constant="31" id="jgd-Sx-3d1"/>
+                            <constraint firstItem="Ilw-Gl-7k3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="oHM-W8-QS1"/>
+                            <constraint firstItem="Ilw-Gl-7k3" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="18" id="s0X-zz-at8"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Ilw-Gl-7k3" secondAttribute="trailing" constant="16" id="tSy-JI-I2J"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="scoreLabel" destination="070-OL-8Hw" id="ZY1-iP-4ry"/>
+                        <outlet property="startStopButton" destination="8q8-Zp-XyF" id="A3N-IH-Xa6"/>
+                        <outlet property="trafficLightImage" destination="Ilw-Gl-7k3" id="pNf-yQ-nNc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-79.200000000000003" y="133.5832083958021"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="desert-2340326_1920" width="1920" height="1080"/>
+        <image name="stopButton" width="1000" height="1000"/>
+        <image name="trafficLight" width="1500" height="600"/>
+    </resources>
 </document>
